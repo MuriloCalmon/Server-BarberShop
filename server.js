@@ -78,7 +78,10 @@ fastify.get('/datetime/:id', (request, reply) => {
 })
 
 try {
-    await fastify.listen({ port: 3334 })
+    await fastify.listen({
+        host: '0.0.0.0',
+        port: 3334
+    })
 } catch (err) {
     fastify.log.error(err)
     process.exit(1)
